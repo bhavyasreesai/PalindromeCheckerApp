@@ -1,20 +1,19 @@
 package Palindrome;
-
 public class UseCasePalindromeCheckerApp {
     public static void main(String[] args) {
-        String text= "madam";
-        boolean ispalindrome = true;
-        for (int i=0;i< text.length()/2;i++){
-               if(text.charAt(i) != text.charAt(text.length() -1 -i)){
-                   ispalindrome= false;
-                   break;
-               }
+        String text = "madam";
+        String reversed = "";
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reversed = reversed + text.charAt(i);
+            }
+            boolean ispalindrome;
+            if (text.equals(reversed)) {
+                ispalindrome = true;
+            } else {
+                ispalindrome = false;
+            }
+            System.out.println("input text " + text);
+            System.out.println("reversed text " + reversed);
+            System.out.println("is it a palindrome?:" + ispalindrome);
         }
-
-
-        System.out.println("INPUT TEXT:" +text );
-        System.out.println("is it a palindrome? :"+ ispalindrome);
-
-
     }
-}
